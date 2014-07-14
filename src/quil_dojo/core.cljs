@@ -15,13 +15,11 @@
       (q/rect x y width height))))
 
 (defn remove-pieces [state x y]
-  (prn state x y)
   (let [new-state (into [] (remove #(and (or (< x (- (:x %) (:width %)))
                                              (> x (+ (:x %) (:width %))))
                                          (or (< y (- (:y %) (:height %)))
                                              (> y (+ (:y %) (:height %))))) state))]
-    (prn new-state)
-    state))
+    new-state))
 
 (defn click []
   (let [x (q/mouse-x)
