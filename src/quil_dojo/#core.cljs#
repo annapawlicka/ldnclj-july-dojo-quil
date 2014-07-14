@@ -17,11 +17,12 @@
     (q/ellipse 200 200 105 105)))
 
 (defn add-piece [x y width height]
-  (swap! state conj {:x x :y y :width width :height height}))
+  (swap! state conj {:x x :y y :width width :height height :colour [(rand-int 255) (rand-int 255) (rand-int 255)]}))
 
 (defn draw-pieces []
   (doseq [piece @state]
-    (let [{:keys [x y width height]} piece]
+    (let [{:keys [x y width height colour]} piece]
+      (apply q/fill colour)
       (q/ellipse x y width height))))
 
 (defn click []
@@ -29,18 +30,25 @@
         y (q/mouse-y)]
      (add-piece x y 50 50)))
 
-(defn shrink [state]
-  (into [] (map #(assoc % :width (- (:width %) 1) :height (- (:height %) 1)) state)))
+(defn grow [state]
+  (into [] (map #(assoc % :width (+ (:width %) 1) :height (+ (:height %) 1)) state)))
+
+(defn add-growable-shape []
+ (add-piece (rand-int 500) (rand-int 500) 50 50) )
 
 (defn draw []
 	(q/background 255)
 	(q/fill 0)
-      
         (draw-pieces)
-        (swap! state shrink))
+        (add-growable-shape)
+        (swap! state grow))
+
 
 (defn setup []
-  (q/frame-rate 10))
+  (q/frame-rate 10)
+  (add-growable-shape)
+  (draw-pieces))
+
 
 (q/defsketch quil-dojo
 	:draw draw
@@ -49,8 +57,13 @@
         :mouse-pressed click
         :setup setup)
 
+;;DONE - add a growable ellipse at the start 
+;;DONE - Add more growable ellipses over time.
+;; DONE - Make the growable ellipses colourful
 
-;; start putting ellipses on screen
+;; start putting ellipses on screen. 
+;; - The ellipses will grow
+;; - over time we will add more that also grow.
 ;; when you click they will be removed
 ;; if the ellipse fills the screen you lose
 
