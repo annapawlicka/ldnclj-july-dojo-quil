@@ -1,20 +1,9 @@
 (ns quil-dojo.core
 	(:require [quil.core :as q :include-macros true]))
 
-(def state (atom []))
+(enable-console-print!)
 
-(defn mouse []
- ; (q/background 255)
- ; (q/fill 0)
-  (doseq [[ind capt fn] [;[0 "mouse-button" q/mouse-button]
-                         ;[1 "mouse-pressed?" q/mouse-pressed?]
-                        ; [2 "mouse-x" q/mouse-x]
-                        ; [3 "mouse-y" q/mouse-y]
-                       ;  [4 "pmouse-x" q/pmouse-x]
-                        ; [5 "pmouse-y" q/pmouse-y]
-                         ]]
-   ; (q/text (str capt " " (fn)) 100 (+ (* 20 ind) 20))
-    (q/ellipse 200 200 105 105)))
+(def state (atom []))
 
 (defn add-piece [x y width height]
   (swap! state conj {:x x :y y :width width :height height :colour [(rand-int 255) (rand-int 255) (rand-int 255)]}))
@@ -23,12 +12,21 @@
   (doseq [piece @state]
     (let [{:keys [x y width height colour]} piece]
       (apply q/fill colour)
-      (q/ellipse x y width height))))
+      (q/rect x y width height))))
+
+(defn remove-pieces [state x y]
+  (prn state x y)
+  (let [new-state (into [] (remove #(and (or (< x (- (:x %) (:width %)))
+                                             (> x (+ (:x %) (:width %))))
+                                         (or (< y (- (:y %) (:height %)))
+                                             (> y (+ (:y %) (:height %))))) state))]
+    (prn new-state)
+    state))
 
 (defn click []
   (let [x (q/mouse-x)
         y (q/mouse-y)]
-     (add-piece x y 50 50)))
+    (swap! state remove-pieces x y)))
 
 (defn grow [state]
   (into [] (map #(assoc % :width (+ (:width %) 1) :height (+ (:height %) 1)) state)))
@@ -45,7 +43,7 @@
 
 
 (defn setup []
-  (q/frame-rate 10)
+  (q/frame-rate 1)
   (add-growable-shape)
   (draw-pieces))
 
@@ -59,7 +57,11 @@
 
 ;;DONE - add a growable ellipse at the start 
 ;;DONE - Add more growable ellipses over time.
-;; Make the growable ellipses colourful
+;; DONE - Make the growable ellipses colourful
+;; When we get an X Y click coordinate we need to work out
+;; - which one(s) have we clicked?
+
+
 
 ;; start putting ellipses on screen. 
 ;; - The ellipses will grow
