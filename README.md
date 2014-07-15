@@ -5,8 +5,11 @@ Click on them to make them disappear and don't let them fill the
 screen.
 
 ## Usage
+Execute:
 
-lein cljsbuild once
+```lein cljsbuild once```
+
+And then open web/index.html in a browser of your choice.
 
 ## License
 
