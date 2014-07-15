@@ -1,10 +1,12 @@
-# test-js
+London Clojurians Early July Dojo
 
-A Quil sketch designed to ... well, that part is up to you.
+A Quil game-like sketch. Race against time and growable rectangles!
+Click on them to make them disappear and don't let them fill the
+screen.
 
 ## Usage
 
-FIXME
+lein cljsbuild once
 
 ## License
 
