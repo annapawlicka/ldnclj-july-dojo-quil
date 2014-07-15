@@ -29,7 +29,8 @@
   (into [] (map #(assoc % :width (+ (:width %) 1) :height (+ (:height %) 1)) state)))
 
 (defn add-growable-shape []
- (add-piece (rand-int 500) (rand-int 500) 50 50) )
+  (when (= 0 (mod (q/millis) 5))
+    (add-piece (rand-int 500) (rand-int 500) 50 50)) )
 
 (defn draw []
 	(q/background 255)
