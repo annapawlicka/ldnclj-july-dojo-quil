@@ -1,4 +1,4 @@
-London Clojurians Early July Dojo
+## London Clojurians Early July Dojo
 
 A Quil game-like sketch. Race against time and growable rectangles!
 Click on them to make them disappear and don't let them fill the
