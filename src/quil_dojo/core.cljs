@@ -14,12 +14,11 @@
       (apply q/fill colour)
       (q/rect x y width height))))
 
-(defn remove-pieces [state x y]
-  (let [new-state (into [] (remove #(and (or (< x (- (:x %) (:width %)))
-                                             (> x (+ (:x %) (:width %))))
-                                         (or (< y (- (:y %) (:height %)))
-                                             (> y (+ (:y %) (:height %))))) state))]
-    new-state))
+(defn remove-pieces [state click-x click-y]
+  (remove #(and (>= click-x (:x %))
+                (<= click-x (+ (:x %) (:width %)))
+                (>= click-y (:y %))
+                (<= click-y (+ (:y %) (:height %)))) state))
 
 (defn click []
   (let [x (q/mouse-x)
@@ -41,7 +40,7 @@
 
 
 (defn setup []
-  (q/frame-rate 1)
+  (q/frame-rate 8)
   (add-growable-shape)
   (draw-pieces))
 
@@ -53,11 +52,11 @@
         :mouse-pressed click
         :setup setup)
 
-;;DONE - add a growable ellipse at the start 
-;;DONE - Add more growable ellipses over time.
+;; DONE - add a growable ellipse at the start 
+;; DONE - Add more growable ellipses over time.
 ;; DONE - Make the growable ellipses colourful
-;; When we get an X Y click coordinate we need to work out
-;; - which one(s) have we clicked?
+;; DONE When we get an X Y click coordinate we need to work out
+;; DONE - which one(s) have we clicked?
 
 
 

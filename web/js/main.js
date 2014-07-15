@@ -29840,65 +29840,65 @@ quil_dojo.core.add_piece = function add_piece(x, y, width, height) {
   [cljs.core.rand_int.call(null, 255), cljs.core.rand_int.call(null, 255), cljs.core.rand_int.call(null, 255)], null)], null));
 };
 quil_dojo.core.draw_pieces = function draw_pieces() {
-  var seq__10744 = cljs.core.seq.call(null, cljs.core.deref.call(null, quil_dojo.core.state));
-  var chunk__10745 = null;
-  var count__10746 = 0;
-  var i__10747 = 0;
+  var seq__10944 = cljs.core.seq.call(null, cljs.core.deref.call(null, quil_dojo.core.state));
+  var chunk__10945 = null;
+  var count__10946 = 0;
+  var i__10947 = 0;
   while (true) {
-    if (i__10747 < count__10746) {
-      var piece = cljs.core._nth.call(null, chunk__10745, i__10747);
-      var map__10748_10750 = piece;
-      var map__10748_10751__$1 = cljs.core.seq_QMARK_.call(null, map__10748_10750) ? cljs.core.apply.call(null, cljs.core.hash_map, map__10748_10750) : map__10748_10750;
-      var colour_10752 = cljs.core.get.call(null, map__10748_10751__$1, new cljs.core.Keyword(null, "colour", "colour", 2137094554));
-      var height_10753 = cljs.core.get.call(null, map__10748_10751__$1, new cljs.core.Keyword(null, "height", "height", 1025178622));
-      var width_10754 = cljs.core.get.call(null, map__10748_10751__$1, new cljs.core.Keyword(null, "width", "width", -384071477));
-      var y_10755 = cljs.core.get.call(null, map__10748_10751__$1, new cljs.core.Keyword(null, "y", "y", -1757859776));
-      var x_10756 = cljs.core.get.call(null, map__10748_10751__$1, new cljs.core.Keyword(null, "x", "x", 2099068185));
-      cljs.core.apply.call(null, quil.core.fill, colour_10752);
-      quil.core.rect.call(null, x_10756, y_10755, width_10754, height_10753);
-      var G__10757 = seq__10744;
-      var G__10758 = chunk__10745;
-      var G__10759 = count__10746;
-      var G__10760 = i__10747 + 1;
-      seq__10744 = G__10757;
-      chunk__10745 = G__10758;
-      count__10746 = G__10759;
-      i__10747 = G__10760;
+    if (i__10947 < count__10946) {
+      var piece = cljs.core._nth.call(null, chunk__10945, i__10947);
+      var map__10948_10950 = piece;
+      var map__10948_10951__$1 = cljs.core.seq_QMARK_.call(null, map__10948_10950) ? cljs.core.apply.call(null, cljs.core.hash_map, map__10948_10950) : map__10948_10950;
+      var colour_10952 = cljs.core.get.call(null, map__10948_10951__$1, new cljs.core.Keyword(null, "colour", "colour", 2137094554));
+      var height_10953 = cljs.core.get.call(null, map__10948_10951__$1, new cljs.core.Keyword(null, "height", "height", 1025178622));
+      var width_10954 = cljs.core.get.call(null, map__10948_10951__$1, new cljs.core.Keyword(null, "width", "width", -384071477));
+      var y_10955 = cljs.core.get.call(null, map__10948_10951__$1, new cljs.core.Keyword(null, "y", "y", -1757859776));
+      var x_10956 = cljs.core.get.call(null, map__10948_10951__$1, new cljs.core.Keyword(null, "x", "x", 2099068185));
+      cljs.core.apply.call(null, quil.core.fill, colour_10952);
+      quil.core.rect.call(null, x_10956, y_10955, width_10954, height_10953);
+      var G__10957 = seq__10944;
+      var G__10958 = chunk__10945;
+      var G__10959 = count__10946;
+      var G__10960 = i__10947 + 1;
+      seq__10944 = G__10957;
+      chunk__10945 = G__10958;
+      count__10946 = G__10959;
+      i__10947 = G__10960;
       continue;
     } else {
-      var temp__4126__auto__ = cljs.core.seq.call(null, seq__10744);
+      var temp__4126__auto__ = cljs.core.seq.call(null, seq__10944);
       if (temp__4126__auto__) {
-        var seq__10744__$1 = temp__4126__auto__;
-        if (cljs.core.chunked_seq_QMARK_.call(null, seq__10744__$1)) {
-          var c__4299__auto__ = cljs.core.chunk_first.call(null, seq__10744__$1);
-          var G__10761 = cljs.core.chunk_rest.call(null, seq__10744__$1);
-          var G__10762 = c__4299__auto__;
-          var G__10763 = cljs.core.count.call(null, c__4299__auto__);
-          var G__10764 = 0;
-          seq__10744 = G__10761;
-          chunk__10745 = G__10762;
-          count__10746 = G__10763;
-          i__10747 = G__10764;
+        var seq__10944__$1 = temp__4126__auto__;
+        if (cljs.core.chunked_seq_QMARK_.call(null, seq__10944__$1)) {
+          var c__4299__auto__ = cljs.core.chunk_first.call(null, seq__10944__$1);
+          var G__10961 = cljs.core.chunk_rest.call(null, seq__10944__$1);
+          var G__10962 = c__4299__auto__;
+          var G__10963 = cljs.core.count.call(null, c__4299__auto__);
+          var G__10964 = 0;
+          seq__10944 = G__10961;
+          chunk__10945 = G__10962;
+          count__10946 = G__10963;
+          i__10947 = G__10964;
           continue;
         } else {
-          var piece = cljs.core.first.call(null, seq__10744__$1);
-          var map__10749_10765 = piece;
-          var map__10749_10766__$1 = cljs.core.seq_QMARK_.call(null, map__10749_10765) ? cljs.core.apply.call(null, cljs.core.hash_map, map__10749_10765) : map__10749_10765;
-          var colour_10767 = cljs.core.get.call(null, map__10749_10766__$1, new cljs.core.Keyword(null, "colour", "colour", 2137094554));
-          var height_10768 = cljs.core.get.call(null, map__10749_10766__$1, new cljs.core.Keyword(null, "height", "height", 1025178622));
-          var width_10769 = cljs.core.get.call(null, map__10749_10766__$1, new cljs.core.Keyword(null, "width", "width", -384071477));
-          var y_10770 = cljs.core.get.call(null, map__10749_10766__$1, new cljs.core.Keyword(null, "y", "y", -1757859776));
-          var x_10771 = cljs.core.get.call(null, map__10749_10766__$1, new cljs.core.Keyword(null, "x", "x", 2099068185));
-          cljs.core.apply.call(null, quil.core.fill, colour_10767);
-          quil.core.rect.call(null, x_10771, y_10770, width_10769, height_10768);
-          var G__10772 = cljs.core.next.call(null, seq__10744__$1);
-          var G__10773 = null;
-          var G__10774 = 0;
-          var G__10775 = 0;
-          seq__10744 = G__10772;
-          chunk__10745 = G__10773;
-          count__10746 = G__10774;
-          i__10747 = G__10775;
+          var piece = cljs.core.first.call(null, seq__10944__$1);
+          var map__10949_10965 = piece;
+          var map__10949_10966__$1 = cljs.core.seq_QMARK_.call(null, map__10949_10965) ? cljs.core.apply.call(null, cljs.core.hash_map, map__10949_10965) : map__10949_10965;
+          var colour_10967 = cljs.core.get.call(null, map__10949_10966__$1, new cljs.core.Keyword(null, "colour", "colour", 2137094554));
+          var height_10968 = cljs.core.get.call(null, map__10949_10966__$1, new cljs.core.Keyword(null, "height", "height", 1025178622));
+          var width_10969 = cljs.core.get.call(null, map__10949_10966__$1, new cljs.core.Keyword(null, "width", "width", -384071477));
+          var y_10970 = cljs.core.get.call(null, map__10949_10966__$1, new cljs.core.Keyword(null, "y", "y", -1757859776));
+          var x_10971 = cljs.core.get.call(null, map__10949_10966__$1, new cljs.core.Keyword(null, "x", "x", 2099068185));
+          cljs.core.apply.call(null, quil.core.fill, colour_10967);
+          quil.core.rect.call(null, x_10971, y_10970, width_10969, height_10968);
+          var G__10972 = cljs.core.next.call(null, seq__10944__$1);
+          var G__10973 = null;
+          var G__10974 = 0;
+          var G__10975 = 0;
+          seq__10944 = G__10972;
+          chunk__10945 = G__10973;
+          count__10946 = G__10974;
+          i__10947 = G__10975;
           continue;
         }
       } else {
@@ -29908,12 +29908,11 @@ quil_dojo.core.draw_pieces = function draw_pieces() {
     break;
   }
 };
-quil_dojo.core.remove_pieces = function remove_pieces(state, x, y) {
-  var new_state = cljs.core.into.call(null, cljs.core.PersistentVector.EMPTY, cljs.core.remove.call(null, function(p1__10776_SHARP_) {
-    return(x < (new cljs.core.Keyword(null, "x", "x", 2099068185)).cljs$core$IFn$_invoke$arity$1(p1__10776_SHARP_) - (new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(p1__10776_SHARP_) || x > (new cljs.core.Keyword(null, "x", "x", 2099068185)).cljs$core$IFn$_invoke$arity$1(p1__10776_SHARP_) + (new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(p1__10776_SHARP_)) && (y < (new cljs.core.Keyword(null, "y", "y", -1757859776)).cljs$core$IFn$_invoke$arity$1(p1__10776_SHARP_) - 
-    (new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(p1__10776_SHARP_) || y > (new cljs.core.Keyword(null, "y", "y", -1757859776)).cljs$core$IFn$_invoke$arity$1(p1__10776_SHARP_) + (new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(p1__10776_SHARP_));
-  }, state));
-  return new_state;
+quil_dojo.core.remove_pieces = function remove_pieces(state, click_x, click_y) {
+  return cljs.core.remove.call(null, function(p1__10976_SHARP_) {
+    return click_x >= (new cljs.core.Keyword(null, "x", "x", 2099068185)).cljs$core$IFn$_invoke$arity$1(p1__10976_SHARP_) && click_x <= (new cljs.core.Keyword(null, "x", "x", 2099068185)).cljs$core$IFn$_invoke$arity$1(p1__10976_SHARP_) + (new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(p1__10976_SHARP_) && click_y >= (new cljs.core.Keyword(null, "y", "y", -1757859776)).cljs$core$IFn$_invoke$arity$1(p1__10976_SHARP_) && click_y <= (new cljs.core.Keyword(null, 
+    "y", "y", -1757859776)).cljs$core$IFn$_invoke$arity$1(p1__10976_SHARP_) + (new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(p1__10976_SHARP_);
+  }, state);
 };
 quil_dojo.core.click = function click() {
   var x = quil.core.mouse_x.call(null);
@@ -29921,8 +29920,8 @@ quil_dojo.core.click = function click() {
   return cljs.core.swap_BANG_.call(null, quil_dojo.core.state, quil_dojo.core.remove_pieces, x, y);
 };
 quil_dojo.core.grow = function grow(state) {
-  return cljs.core.into.call(null, cljs.core.PersistentVector.EMPTY, cljs.core.map.call(null, function(p1__10777_SHARP_) {
-    return cljs.core.assoc.call(null, p1__10777_SHARP_, new cljs.core.Keyword(null, "width", "width", -384071477), (new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(p1__10777_SHARP_) + 1, new cljs.core.Keyword(null, "height", "height", 1025178622), (new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(p1__10777_SHARP_) + 1);
+  return cljs.core.into.call(null, cljs.core.PersistentVector.EMPTY, cljs.core.map.call(null, function(p1__10977_SHARP_) {
+    return cljs.core.assoc.call(null, p1__10977_SHARP_, new cljs.core.Keyword(null, "width", "width", -384071477), (new cljs.core.Keyword(null, "width", "width", -384071477)).cljs$core$IFn$_invoke$arity$1(p1__10977_SHARP_) + 1, new cljs.core.Keyword(null, "height", "height", 1025178622), (new cljs.core.Keyword(null, "height", "height", 1025178622)).cljs$core$IFn$_invoke$arity$1(p1__10977_SHARP_) + 1);
   }, state));
 };
 quil_dojo.core.add_growable_shape = function add_growable_shape() {
@@ -29936,7 +29935,7 @@ quil_dojo.core.draw = function draw() {
   return cljs.core.swap_BANG_.call(null, quil_dojo.core.state, quil_dojo.core.grow);
 };
 quil_dojo.core.setup = function setup() {
-  quil.core.frame_rate.call(null, 1);
+  quil.core.frame_rate.call(null, 8);
   quil_dojo.core.add_growable_shape.call(null);
   return quil_dojo.core.draw_pieces.call(null);
 };
